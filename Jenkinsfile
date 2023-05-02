@@ -9,11 +9,12 @@ pipeline {
                         }
                     }
                                     }
-        stage('проверяем статус сервера') {
+        stage('проверяем статус сервера')
         if (theStage in ["start docker","all"]) {
     sleep 2
     }
-            steps {
+        {
+        steps {
                 script {
                     sh 'bash -vx serverstatus.sh'
                        }
