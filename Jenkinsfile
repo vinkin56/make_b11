@@ -16,5 +16,12 @@ pipeline {
                        }
                    }
                                             }
+         stage('Останавливаем docker контейнер') {
+            steps {
+                script {
+                    sh 'sudo docker stop nginx'
+                       }
+                   }
+                                            }
     }
   }
