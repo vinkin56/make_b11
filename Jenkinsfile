@@ -9,6 +9,13 @@ pipeline {
                         }
                     }
                                     }
+        stage('проверяем статус сервера') {
+            steps {
+                script {
+                    sh 'bash -vx serverstatus.sh'
+                       }
+                   }
+                                            }
         stage('проверяем md5 index.html') {
             steps {
                 script {
