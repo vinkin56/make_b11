@@ -1,5 +1,5 @@
 online_md5="$(curl -sL http://158.160.41.146:9889 | md5sum | cut -d ' ' -f 1)"
-local_md5="$(md5sum "/home/vinkin/jenkins/workspace/myfirst/www/index.html" | cut -d ' ' -f 1)"
+local_md5="$(md5sum "${WORKSPACE}/www/index.html" | cut -d ' ' -f 1)"
 
 if [ "$online_md5" = "$local_md5" ]; then
     echo "Ok!"
