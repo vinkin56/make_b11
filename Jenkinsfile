@@ -9,16 +9,12 @@ pipeline {
                         }
                     }
                                     }
-        stage('проверяем статус сервера')
-        if (theStage in ["start docker","all"]) {
-    sleep 2
-        {
+        stage('проверяем статус сервера') {
         steps {
                 script {
                     sh 'bash -vx serverstatus.sh'
                        }
                }
-          }
                                             }
         stage('проверяем md5 index.html') {
             steps {
