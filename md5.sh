@@ -4,5 +4,5 @@ local_md5="$(md5sum "${WORKSPACE}/www/index.html" | cut -d ' ' -f 1)"
 if [ "$online_md5" = "$local_md5" ]; then
     echo "Ok!"
  else
- echo 'MD5 Incorrect' | mail -s 'Warning md5 Incorrect' -a /var/log/maillog master@dmosk.ru
+ echo 'MD5 Incorrect' | mail -s 'Warning md5 Incorrect' -A /var/log/maillog  it.andreys@yandex.ru
 fi
