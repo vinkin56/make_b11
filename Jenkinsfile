@@ -2,7 +2,7 @@ pipeline {
     agent {
         docker {
                 image 'nginx'
-                args '--rm -p 9889:80 --name nginx -v ${WORKSPACE}/www:/usr/share/nginx/html:ro -d nginx'
+                args '-d -p 9889:80 --name nginx -v ${WORKSPACE}/www:/usr/share/nginx/html:ro nginx'
                 }
            }
     stages {
