@@ -1,6 +1,6 @@
 status = $(curl -o /dev/null -Iksw "%{http_code}" http://158.160.41.146:9889)
 
-if [ "$status" = "200" ]
+if [ "$status" = 200 ]
 then
   echo -e "Server status OK"
 else
