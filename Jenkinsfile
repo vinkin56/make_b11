@@ -1,15 +1,9 @@
 pipeline {
-    agent {
-        docker {
-                image 'nginx:latest'
-                args '-p 9889:80'
-                }
-           }
     stages {
-        stage('Build') {
+        stage('Стартуем docker') {
             steps {
                 script {
-                          sh "curl -s http://localhost:9889"
+                          sh "sudo docker run --rm -d -p 9889:80 --name nginx -v ${WORKSPACE}/www:/usr/share/nginx/html:ro nginx"
                 }
             }
         }
