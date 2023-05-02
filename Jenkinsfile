@@ -12,7 +12,7 @@ pipeline {
         stage('проверяем md5 index.html') {
             steps {
                 script {
-                    sh '${WORKSPACE}/md5.sh'
+                    sh 'bash -vx md5.sh'
                        }
                    }
                                             }
